@@ -1,0 +1,31 @@
+<div class="d-flex align-items-center justify-content-center vw-100 vh-100">
+    <div class="card text-center home">
+        <div class="card-header">
+            <h3 class="card-title">Welcome!</h3>
+        </div>
+        <div class="card-body d-flex flex-column gap-2">
+            <p>What would you like to do?</p>
+            <a href='/register'>
+                <button type="button" class="btn btn-primary w-100">
+                    Register
+                </button>
+            </a>
+            <% if logged? %>
+                <a href='/login'>
+                    <button type="button" class="btn btn-primary w-100">
+                        Log in
+                    </button>
+                </a>
+            <% else %>
+                <%= button_to 'Log out', '/logout', method: :delete, class: "btn btn-danger w-100" %>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<style>
+.home {
+    width: fit-content;
+    height: fit-content;
+}
+</style>
